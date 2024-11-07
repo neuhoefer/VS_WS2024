@@ -70,6 +70,6 @@ public class SoapboxController : MonoBehaviour
         wheel.position = pos;
         wheel.rotation = rot;
 
-        wheel.transform.Rotate(Vector3.forward, 90.0f, Space.Self);
+        //wheel.transform.Rotate(Vector3.forward, 90.0f, Space.Self);
     }
 }
