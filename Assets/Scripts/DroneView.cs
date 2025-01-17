@@ -4,10 +4,9 @@ using UnityEngine.UI;
 
 public class DroneView : MonoBehaviour
 {
-    [SerializeField] private Transform m_spot;
     [SerializeField] private Camera m_droneCamera;
     [SerializeField] private MeshCollider m_groundCollider;
-    [SerializeField] private NavMeshAgent m_agent;
+    [SerializeField] private Automation m_automation;
 
     private RawImage m_rawImage = null;
     private RectTransform m_rectTransform = null;
@@ -36,8 +35,7 @@ public class DroneView : MonoBehaviour
             {
                 Ray ray = m_droneCamera.ViewportPointToRay(m_droneViewMousePos);
                 m_groundCollider.Raycast(ray, out RaycastHit raycastHit, 20.0f);
-                m_spot.position = raycastHit.point;
-                m_agent.SetDestination(m_spot.position);
+                m_automation.SetAgentDestination(raycastHit.point);
             }
         }
     }
